@@ -1,1 +1,2 @@
 import './HelloWorld';
+import './TestedWidget';
