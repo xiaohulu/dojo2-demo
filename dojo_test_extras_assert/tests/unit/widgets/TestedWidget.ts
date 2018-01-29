@@ -13,7 +13,7 @@ registerSuite('TestedWidget', {
             let widget = harness(TestedWidget);
             widget.expectRender(v('div', {
                 classes: css.root,
-                style: 'height: 120px;'
+                style: 'height:120px'
             },['Test Widget']))
         }
     }
