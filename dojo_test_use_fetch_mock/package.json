@@ -22,6 +22,10 @@
     "@types/sinon": "^1.16.35",
     "intern": "~4.1.5",
     "sinon": "^2.0.0",
-    "typescript": "~2.6.1"
+    "typescript": "~2.6.1",
+    "@types/fetch-mock": "5.12.2",
+    "@types/isomorphic-fetch": "0.0.34",
+    "fetch-mock": "6.0.0",
+    "isomorphic-fetch": "2.2.1"
   }
 }
