@@ -1,10 +1,10 @@
-import { v } from '@dojo/widget-core/d';
+import { v, w } from '@dojo/widget-core/d';
 import { WidgetBase } from '@dojo/widget-core/WidgetBase';
 
-import * as css from './styles/helloWorld.m.css';
+import Toolbar from '@dojo/widgets/toolbar/Toolbar';
+import dojoTheme from '@dojo/widgets/themes/dojo/theme';
 
-const logo = require('./../img/logo.svg');
-
+import * as iconCss from '@dojo/widgets/theme/common/icons.m.css';
 /**
  * A themed "Hello World" widget that renders a spinning Dojo 2 logo and the text
  * "Hello, Dojo 2 World!".
@@ -18,10 +18,21 @@ export class HelloWorld extends WidgetBase {
 	 * @returns {HNode} Each time render() executes, it should build the entire virtual DOM tree.
 	 */
 	protected render() {
+		
 		// Use WidgetBase#classes() to assign CSS classnames from the theme to the virtual DOM nodes.
-		return v('div', { classes: css.root }, [
-			v('img', { src: logo, classes: css.logo }),
-			v('div', { classes: css.label }, ['Hello, Dojo 2 World!'])
+		return w(Toolbar, {
+			actions: [
+				v('a', { href: '/#home' }, [ v('i', {classes: [iconCss.icon, iconCss.searchIcon]}), 'Home' ]),
+				v('a', { href: '/#about' }, [ 'About' ]),
+				v('a', { href: '/#contact' }, [ 'Contact' ])
+			],
+			title: 'My Site',
+			fixed: false,
+			
+			theme:dojoTheme,
+			menuTitle:'Menu'
+		}, [
+			
 		]);
 	}
 }
